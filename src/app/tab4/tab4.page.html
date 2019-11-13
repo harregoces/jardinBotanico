@@ -2,43 +2,42 @@
 
     <ion-grid>
         <ion-row>
-            <ion-col>
-                <ion-button size="large" expand="full">
-                    <ion-icon name="briefcase"></ion-icon>
+            <ion-col col-6>
+                <ion-button size="large" expand="full" class="botones" routerLink="/vivero">
+                    <ion-img src="assets/img/herbal.png"></ion-img>
                 </ion-button>
             </ion-col>
         </ion-row>
         <ion-row>
-            <ion-col>
-                <ion-button size="large" expand="full">
-                    <ion-button>
-                        <ion-icon name="pizza"></ion-icon>
-                    </ion-button>
+            <ion-col col-6>
+                <ion-button size="large" expand="full" class="botones" routerLink="/restaurantes">
+                    <ion-img src="assets/img/nuevo.png"></ion-img>
                 </ion-button>
             </ion-col>
         </ion-row>
         <ion-row>
-            <ion-col>
-                <ion-button size="large" expand="full">
-                    <ion-icon name="calendar"></ion-icon>
+            <ion-col col-6>
+                <ion-button size="large" expand="full" class="botones" routerLink="/eventos">
+                    <ion-img src="assets/img/eventos.png"></ion-img>
                 </ion-button>
             </ion-col>
         </ion-row>
     </ion-grid>
 
-    <ion-card *ngFor="let servicio of itemsServicios">
-        <ion-card-header>
-            <ion-img [src]="servicio.get('imagen')"></ion-img>
-            <ion-card-title>{{servicio.get('titulo')}}</ion-card-title>
-        </ion-card-header>
-        <ion-item>
-            <ion-icon name="call" slot="start"></ion-icon>
-            <ion-label>{{servicio.get('informacion')}}</ion-label>
-            <ion-button fill="outline" slot="end" [routerLink]="['restaurantes']">Ver</ion-button>
-        </ion-item>
-        <ion-card-content>
-            {{servicio.get('descripcion')}}
-        </ion-card-content>
-    </ion-card>
+    <!-- <ion-card *ngFor="let servicio of itemsServicios"> -->
+        <!-- <ion-card-header> -->
+            <!-- <ion-img [src]="servicio.get('imagen')"></ion-img> -->
+            <!-- <ion-card-title>{{servicio.get('titulo')}}</ion-card-title> -->
+        <!-- </ion-card-header> -->
+        <!-- <ion-item> -->
+            <!-- <ion-icon name="call" slot="start"></ion-icon> -->
+            <!-- <ion-label>{{servicio.get('informacion')}}</ion-label> -->
+            <!-- <ion-button fill="outline" slot="end" [routerLink]="['restaurantes']">Ver</ion-button> -->
+        <!-- </ion-item> -->
+        <!-- <ion-card-content> -->
+            <!-- {{servicio.get('descripcion')}} -->
+        <!-- </ion-card-content> -->
+    <!-- </ion-card> -->
+
 
 </ion-content>

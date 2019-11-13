@@ -1,10 +1,16 @@
 <ion-content>
+    <ion-card>
+        <img src="assets/img/taller.jpg">
+        <ion-card-content class="ion-text-center">
+            Bienvenidos a Nuestro Portafolio de Actividades, Aca Podras Encontrar diferentes Talleres y Cursos que en Compañia de Tus Familiares Podras Disfrutar. Solo tienes que Inscribirte!
+        </ion-card-content>
+    </ion-card>
 
-    <ion-card *ngFor="let item of itemsPortafolios">
+    <ion-card *ngFor="let item of itemsPortafolios">    
         <ion-item>
             <ion-icon name="paper" slot="start"></ion-icon>
             <ion-label>{{item.get('titulo')}}</ion-label>
-            <ion-button fill="outline" slot="end" (click)="enviarPortafolioVista(item)" >Ver</ion-button>
+            <ion-button fill="outline" slot="end" (click)="enviarPortafolioVista(item)">Ver</ion-button>
         </ion-item>
         <ion-card-content>
             {{item.get('descripcion')}}

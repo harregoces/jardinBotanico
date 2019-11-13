@@ -6,6 +6,8 @@ import {PortafolioInterface} from '../interfaces/PortafolioInterface';
 import {ServicioInterface} from '../interfaces/ServicioInterface';
 import {inicioInterface} from '../interfaces/inicioInterface';
 import {institucionalInterface} from '../interfaces/institucionalInterface';
+import {restauranteInterface} from '../interfaces/restauranteInterface';
+
 
 
 @Injectable({
@@ -18,6 +20,20 @@ export class ParseProviderService {
 
     constructor() {
         this.parseInitialize();
+    }
+
+    public getItemsMarcadores(): Promise<any> {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const marcadores: any[] = Parse.Object.extend('mapa_marcadores');
+                const query = new Parse.Query(marcadores);
+                query.find().then((item) => {
+                    resolve(item);
+                }, (error) => {
+                    reject(error);
+                });
+            }, 500);
+        });
     }
 
     public getItemsPortafolios(offset: number = 0, limit: number = 3): Promise<any> {
@@ -96,6 +112,24 @@ export class ParseProviderService {
             }, 500);
         });
     }
+
+    public getItemsrestaurante(offset: number = 0, limit: number = 3): Promise<any> {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const restaurantes: restauranteInterface[] = Parse.Object.extend('restaurantes');
+                const query = new Parse.Query(restaurantes);
+                query.skip(offset);
+                query.limit(limit);
+                query.find().then((itemsrestaurante) => {
+                    resolve(itemsrestaurante);
+                }, (error) => {
+                    reject(error);
+                });
+            }, 500);
+        });
+    }
+
+   
 
     private parseInitialize() {
         Parse.initialize(this.parseAppId);

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ParseProviderService} from '../parse-provider.service';
+import {restauranteInterface} from '../../interfaces/restauranteInterface';
 
 @Component({
   selector: 'app-restaurantes',
@@ -7,7 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantesPage implements OnInit {
 
-  constructor() { }
+  itemsrestaurantes: restauranteInterface[]  = [];
+
+  constructor(private parseProvider: ParseProviderService) {
+    this.listRestaurante();
+   }
+
+   public listRestaurante(): Promise<any> {
+    const offset = this.itemsrestaurantes.length;
+    const limit = 10;
+    return this.parseProvider.getItemsrestaurante(offset, limit).then((result) => {
+        for (const restaurantes of result) {
+          this.itemsrestaurantes.push(restaurantes);
+        }
+    }, (error) => {
+        console.log(error);
+    });
+}
+
 
   ngOnInit() {
   }

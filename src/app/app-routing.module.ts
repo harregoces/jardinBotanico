@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'tarifas-horarios', loadChildren: './tarifas-horarios/tarifas-horarios.module#TarifasHorariosPageModule' },
   { path: 'parqueadero', loadChildren: './parqueadero/parqueadero.module#ParqueaderoPageModule' },
   { path: 'plantas-scanner', loadChildren: './plantas-scanner/plantas-scanner.module#PlantasScannerPageModule' },
-  { path: 'plantas-view', loadChildren: './plantas-view/plantas-view.module#PlantasViewPageModule' },  { path: 'portafolio-vista', loadChildren: './portafolio-vista/portafolio-vista.module#PortafolioVistaPageModule' }
+  { path: 'plantas-view', loadChildren: './plantas-view/plantas-view.module#PlantasViewPageModule' },  { path: 'portafolio-vista', loadChildren: './portafolio-vista/portafolio-vista.module#PortafolioVistaPageModule' },
+  { path: 'recomendaciones', loadChildren: './recomendaciones/recomendaciones.module#RecomendacionesPageModule' }
 
 
 ];

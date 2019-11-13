@@ -43,9 +43,7 @@ export class PlantasScannerPage implements OnInit {
     }
 
     stopScanning() {
-        // tslint:disable-next-line:no-unused-expression
-        (this.scanSubscription) ? this.scanSubscription.unsubscribe() : null;
-        this.scanSubscription = null;
+        this.scanSubscription.unsubscribe();
         (window.document.querySelector('ion-app') as HTMLElement).classList.remove('cameraView');
         this.qrScanner.hide();
         this.hideCamera();
